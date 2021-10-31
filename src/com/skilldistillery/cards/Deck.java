@@ -15,22 +15,20 @@ public class Deck {
 		}
 	}
 	
-	public int checkDeckSize() {
+	public int cardsInDeck() {
 		return cards.size();
 	}
 	
 	public Card dealCard() {
-		if (cards.size() <= 0) 
+		if (cardsInDeck() <= 0) 
 			return null;
 		
-		Card card = cards.remove(cards.size() - 1);
-		cards.remove(card);
-		return card;
+		return cards.remove(cards.size() - 1);
 	}
 	
-	public void shuffle() {
-		Collections.shuffle(cards);
-		Collections.shuffle(cards);
-		Collections.shuffle(cards);
+	public void shuffle(int numOfTimes) {
+		for (int x = 0; x < numOfTimes; x++) {
+			Collections.shuffle(cards);
+		}
 	}
 }
